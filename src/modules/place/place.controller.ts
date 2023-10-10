@@ -15,7 +15,7 @@ import { PlaceService } from './place.service';
 export class PlaceController {
   constructor(private placeService: PlaceService) {}
 
-  @Get('')
+  @Get()
   getAllPlaces(): Promise<Place[]> {
     return this.placeService.getAll();
   }
@@ -30,7 +30,7 @@ export class PlaceController {
     return this.placeService.filterByName(name);
   }
 
-  @Post('')
+  @Post()
   createNewPlace(@Body() place: PlaceDTO): Promise<Place> {
     return this.placeService.create(place);
   }
